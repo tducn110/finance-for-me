@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "src/index.ts": {
+      "runtime": "edge"
+    }
+  },
+  "routes": [
+    { "src": "/api/(.*)", "dest": "src/index.ts" }
+  ]
+}
