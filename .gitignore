@@ -1,8 +1,11 @@
-# 🦾 AGENTIC SECURITY (Local Only)
-.agent/
-.agents/
-mcp_config.json
-mcp-configs/
+# 🦾 AGENTIC SECURITY (Local Only - Root)
+/*.js
+/*.sh
+/.agent/
+/.agents/
+/mcp_config.json
+/mcp-configs/
+/plans/
 
 # 📦 PACKAGES
 node_modules/
@@ -13,7 +16,7 @@ dist/
 package-lock.json
 
 # 📄 DOCUMENTS (Local Only)
-*.md
+/*.md
 !README.md
 docs/
 scripts/
