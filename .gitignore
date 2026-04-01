@@ -26,3 +26,11 @@ hooks/
 .env.development.local
 .env.test.local
 .env.production.local
+
+#  LOCAL ECC TOOLS
+*.js
+*.sh
+!package.json
+!turbo.json
+!mcp_config.json
+
