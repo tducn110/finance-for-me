@@ -1,0 +1,13 @@
+{
+  "name": "@finance/api",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "hono-dev src/index.ts",
+    "build": "hono-build src/index.ts"
+  },
+  "dependencies": {
+    "hono": "^4.12.9",
+    "@tidbcloud/serverless": "^0.1.0"
+  }
+}

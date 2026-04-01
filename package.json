@@ -1,0 +1,24 @@
+{
+  "name": "finance-tracker-v3",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Premium Finance Tracker V3 - Monorepo Structure",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test"
+  },
+  "devDependencies": {
+    "turbo": "^2.1.0",
+    "typescript": "^5.5.0",
+    "prettier": "^3.3.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
