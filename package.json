@@ -11,12 +11,21 @@
     "dev": "turbo run dev",
     "build": "turbo run build",
     "lint": "turbo run lint",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "db:up": "docker-compose up -d",
+    "db:down": "docker-compose down",
+    "db:generate": "drizzle-kit generate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
   },
   "devDependencies": {
+    "@types/node": "^20.19.37",
+    "dotenv": "^17.3.1",
+    "drizzle-kit": "^0.24.2",
+    "mysql2": "^3.20.0",
+    "prettier": "^3.3.0",
     "turbo": "^2.1.0",
-    "typescript": "^5.5.0",
-    "prettier": "^3.3.0"
+    "typescript": "^5.5.0"
   },
   "engines": {
     "node": ">=18"
