@@ -1,6 +1,6 @@
 {
   "name": "@finance/shared-schemas",
-  "version : "1.0.0",
+  "version": "1.0.0",
   "main": "src/index.ts",
   "dependencies": {
     "zod": "^3.23.8",
