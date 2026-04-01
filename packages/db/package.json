@@ -2,11 +2,19 @@
   "name": "@finance/db",
   "version": "1.0.0",
   "main": "src/index.ts",
+  "scripts": {
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
+  },
   "dependencies": {
     "drizzle-orm": "^0.33.0",
     "@tidbcloud/serverless": "^0.1.0"
   },
   "devDependencies": {
-    "drizzle-kit": "^0.24.0"
+    "drizzle-kit": "^0.24.0",
+    "dotenv": "^17.3.1",
+    "typescript": "^5.5.0"
   }
 }
