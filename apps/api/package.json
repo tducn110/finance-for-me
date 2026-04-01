@@ -3,11 +3,22 @@
   "version": "1.0.0",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "hono-dev src/index.ts",
-    "build": "hono-build src/index.ts"
+    "dev": "wrangler dev src/index.ts",
+    "build": "tsc --noEmit"
   },
   "dependencies": {
     "hono": "^4.12.9",
-    "@tidbcloud/serverless": "^0.1.0"
+    "@hono/zod-validator": "^0.4.3",
+    "@tidbcloud/serverless": "^0.1.0",
+    "@finance/db": "workspace:*",
+    "@finance/shared-schemas": "workspace:*",
+    "jose": "^5.9.6",
+    "bcryptjs": "^2.4.3",
+    "decimal.js": "^10.4.3"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "typescript": "^5.5.0",
+    "wrangler": "^3.0.0"
   }
 }
