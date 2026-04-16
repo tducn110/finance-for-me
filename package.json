@@ -15,9 +15,9 @@
     "typecheck": "turbo run typecheck",
     "db:up": "docker-compose up -d",
     "db:down": "docker-compose down",
-    "db:generate": "drizzle-kit generate",
-    "db:push": "drizzle-kit push",
-    "db:studio": "drizzle-kit studio"
+    "db:generate": "turbo run db:generate",
+    "db:push": "turbo run db:push",
+    "db:studio": "turbo run db:studio"
   },
   "packageManager": "pnpm@9.12.3",
   "devDependencies": {

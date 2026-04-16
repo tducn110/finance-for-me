@@ -1,12 +1,12 @@
 services:
-  db:
+  database:
     image: mysql:8.0
-    container_name: finance-db-local
-    restart: always
+    container_name: s2s-finance-db
     environment:
-      MYSQL_DATABASE: finance_db
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: finance_tracker
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
     ports:
       - "3306:3306"
     volumes:
