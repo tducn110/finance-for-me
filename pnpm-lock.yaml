@@ -220,9 +220,15 @@ importers:
         specifier: ^0.33.0
         version: 0.33.0(@tidbcloud/serverless@0.1.1)(@types/react@19.2.14)(mysql2@3.20.0(@types/node@20.19.37))(react@19.2.4)
     devDependencies:
+      dotenv:
+        specifier: ^17.3.1
+        version: 17.3.1
       drizzle-kit:
         specifier: ^0.24.0
         version: 0.24.2
+      typescript:
+        specifier: ^5.5.0
+        version: 5.9.3
 
   packages/shared-schemas:
     dependencies:

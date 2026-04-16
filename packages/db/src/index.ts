@@ -1,20 +1,26 @@
-import { drizzle } from 'drizzle-orm/mysql2';
-import mysql from 'mysql2/promise';
-import * as schema from './schema';
-import dotenv from 'dotenv';
-import path from 'path';
+// packages/db/src/index.ts
+// TiDB Serverless HTTP Driver — Vercel Edge Runtime compatible (no TCP)
+import { connect } from "@tidbcloud/serverless";
+import { drizzle } from "drizzle-orm/tidb-serverless";
+import * as schema from "./schema";
 
-// Load environment variables from .env.local in the root directory
-dotenv.config({ path: path.resolve(__dirname, '../../../../.env.local') });
-
-const connectionString = process.env.DATABASE_URL;
-
-if (!connectionString) {
-  throw new Error('DATABASE_URL is not defined in .env.local');
+if (!process.env.DATABASE_URL) {
+  throw new Error("[packages/db] DATABASE_URL is not set. Check .env.local");
 }
 
-export const connection = mysql.createPool(connectionString);
+// HTTP connection — works on both Docker (via TiDB proxy) and TiDB Serverless Cloud
+// Local: mysql://root:root@127.0.0.1:4000/s2s_finance (TiDB Serverless local CLI or tcp2http proxy)
+// Cloud: mysql://username:password@gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/s2s_finance
+const connection = connect({ url: process.env.DATABASE_URL });
 
-export const db = drizzle(connection, { schema, mode: 'default' });
-export * from './schema';
-export * from 'drizzle-orm';
+export const db = drizzle(connection, {
+  schema,
+  logger: process.env.NODE_ENV === "development",
+});
+
+export * from "./schema";
+export type { Transaction, NewTransaction } from "./schema";
+export type { User, NewUser } from "./schema";
+export type { Goal, NewGoal } from "./schema";
+export type { BillPayment, NewBillPayment } from "./schema";
+export type { CashWallet } from "./schema";
